@@ -5,7 +5,8 @@ int time(int hour, int min);
 int hours(int totalMinutes);
 int minute(int totalMinutes);
 
-int totalMinutes;
+
+
 
 main()
 {
@@ -20,13 +21,11 @@ main()
  cout << "Enter time in min:  ";
  cin >> min;
 
- time(hour, min);
- answer1 = hours(totalMinutes);
- answer2 = minute(totalMinutes);
+ int total = time(hour, min);
+ answer1 = hours(total);
+ answer2 = minute(total);
 
- cout << answer1 << " hours and " << answer2 << "minutes "<< endl;
-
-
+ cout << answer1 << " : " << answer2 << endl;
 }
 
 int time(int hour, int min)
@@ -34,7 +33,8 @@ int time(int hour, int min)
  int minutes;
  
  minutes = (hour * 60) + min;
- totalMinutes = minutes+15;
+ int totalMinutes = minutes+15;
+ return totalMinutes;
 }
 
  int hours(int totalMinutes)
@@ -50,10 +50,3 @@ int time(int hour, int min)
  correctMin = totalMinutes % 60;
  return correctMin; 
 }
-
-
-
-
- 
-
-
